@@ -1,0 +1,62 @@
+<resources>
+
+    <string name="app_name">TV Shows</string>
+
+    <!-- Menu Bar -->
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Generic Errors -->
+    <string name="api_error">An error occurred. Please try again later.</string>
+    <string name="no_internet_error">No internet connection detected. Please reconnect to try again.</string>
+
+    <!-- Show Info -->
+    <string name="show_info_list_of_episodes">List of Episodes:</string>
+    <string name="show_info_air_time">"Airs on <b>%s</b> at <b>%s</b>"</string>
+    <string name="episode_info_number_name">"Episode %d:\n%s"</string>
+    <string name="episode_info_seasson_number_name">"Seasson %d - Episode %d:\n%s"</string>
+    <string name="seasson_number">"Seasson %d"</string>
+
+    <!-- Search -->
+    <string name="search_shows_label">Shows:</string>
+    <string name="search_people_label">People:</string>
+    <string name="search_hint">Search Shows and People</string>
+
+    <!-- Person Info -->
+    <string name="person_info_shows_label">TV Shows:</string>
+
+    <!-- Loading Lists -->
+    <string name="nothing_to_show_label">Nothing to show</string>
+
+    <!-- MainActivity -->
+    <string name="no_internet_snackbar_action_text">Try Again</string>
+
+    <!-- Preference Titles -->
+    <string name="theme_header">Theme</string>
+    <string name="security_header">Security</string>
+
+    <!-- Preference Keys -->
+    <string name="select_app_theme_key">theme</string>
+    <string name="use_pin_key">use_pin</string>
+    <string name="pin_key">pin</string>
+    <string name="use_fingerprint_key">use_fingerprint</string>
+
+    <!-- Theme Preferences -->
+    <string name="select_app_theme_title">Select app theme</string>
+
+    <!-- Security Preferences -->
+    <string name="use_ping_title">Use PIN</string>
+    <string name="set_pin_title">Set PIN digits</string>
+    <string name="use_fingerprint_title">Use fingerprint</string>
+    <string name="pin_minimum_digits">PIN must be minimum 4 digits</string>
+
+    <!-- PinActivity -->
+    <string name="inser_pin_hint">Insert your 4 digits pin</string>
+    <string name="enter_button_label">Enter</string>
+    <string name="biometrict_prompt_title">Enter with fingerprint</string>
+    <string name="biometrict_prompt_cancel">Cancel</string>
+    <string name="invalid_pin">Invalid PIN</string>
+
+</resources>

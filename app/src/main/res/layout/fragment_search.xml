@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    bind:context=".ui.presentation.search.SearchFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/search_items_width">
+
+            <TextView
+                android:id="@+id/textview_search_shows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/search_shows_label"
+                android:textColor="@color/darkred"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_search_shows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/textview_search_shows"/>
+
+            <TextView
+                android:id="@+id/textview_search_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/search_people_label"
+                android:textColor="@color/darkred"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_search_shows"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_search_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/textview_search_people" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/layout_loading_lists"
+        android:id="@+id/layout_loading_lists"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:background="?android:colorBackground"
+        android:focusable="true"
+        android:layout_gravity="bottom"
+        app:closeIcon="@null"
+        app:queryHint="@string/search_hint"
+        app:iconifiedByDefault="false"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
