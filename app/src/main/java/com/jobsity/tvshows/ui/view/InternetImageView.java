@@ -1,4 +1,4 @@
-package com.jobsity.tvshows.view;
+package com.jobsity.tvshows.ui.view;
 
 import android.content.Context;
 import android.text.TextUtils;

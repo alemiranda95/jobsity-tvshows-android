@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <com.jobsity.tvshows.view.InternetImageView
+                    <com.jobsity.tvshows.ui.view.InternetImageView
                         android:id="@+id/imageview_show_info_poster"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

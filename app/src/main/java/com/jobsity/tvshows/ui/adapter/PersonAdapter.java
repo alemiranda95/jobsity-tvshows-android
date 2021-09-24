@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jobsity.tvshows.R;
 import com.jobsity.tvshows.domain.model.person.Person;
 import com.jobsity.tvshows.ui.interfaces.PersonAdapterInterface;
-import com.jobsity.tvshows.view.InternetImageView;
+import com.jobsity.tvshows.ui.view.InternetImageView;
 
 import java.util.List;
 

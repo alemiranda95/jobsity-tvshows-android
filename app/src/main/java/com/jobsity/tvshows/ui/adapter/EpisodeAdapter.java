@@ -15,7 +15,7 @@ import com.jobsity.tvshows.R;
 import com.jobsity.tvshows.TvShowApp;
 import com.jobsity.tvshows.domain.model.episode.Episode;
 import com.jobsity.tvshows.util.FormatUtils;
-import com.jobsity.tvshows.view.InternetImageView;
+import com.jobsity.tvshows.ui.view.InternetImageView;
 
 import java.util.List;
 

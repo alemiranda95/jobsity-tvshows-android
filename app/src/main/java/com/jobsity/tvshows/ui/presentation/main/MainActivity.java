@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.jobsity.tvshows.R;
 import com.jobsity.tvshows.databinding.ActivityMainBinding;
 import com.jobsity.tvshows.ui.presentation.BaseActivity;
+import com.jobsity.tvshows.ui.presentation.main.MainViewModel;
 import com.jobsity.tvshows.ui.presentation.pin.PinActivity;
 
 public class MainActivity extends BaseActivity {

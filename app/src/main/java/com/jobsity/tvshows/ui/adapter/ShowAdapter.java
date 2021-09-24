@@ -16,7 +16,7 @@ import com.jobsity.tvshows.R;
 import com.jobsity.tvshows.domain.model.show.Show;
 import com.jobsity.tvshows.ui.interfaces.SHowAdapterInterface;
 import com.jobsity.tvshows.ui.presentation.search.SearchFragment;
-import com.jobsity.tvshows.view.InternetImageView;
+import com.jobsity.tvshows.ui.view.InternetImageView;
 
 import java.util.List;
 

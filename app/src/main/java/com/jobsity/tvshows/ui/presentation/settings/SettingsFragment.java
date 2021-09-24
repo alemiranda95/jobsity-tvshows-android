@@ -16,7 +16,7 @@ import com.jobsity.tvshows.R;
 import com.jobsity.tvshows.TvShowApp;
 import com.jobsity.tvshows.ui.presentation.main.MainActivity;
 import com.jobsity.tvshows.util.constant.AppConstants;
-import com.jobsity.tvshows.view.PinEditTextPreference;
+import com.jobsity.tvshows.ui.view.PinEditTextPreference;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
 

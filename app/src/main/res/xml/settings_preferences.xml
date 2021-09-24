@@ -18,7 +18,7 @@
             app:key="@string/use_pin_key"
             app:title="@string/use_ping_title" />
 
-        <com.jobsity.tvshows.view.PinEditTextPreference
+        <com.jobsity.tvshows.ui.view.PinEditTextPreference
             app:dependency="@string/use_pin_key"
             app:key="@string/pin_key"
             app:title="@string/set_pin_title"
