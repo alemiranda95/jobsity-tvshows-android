@@ -53,19 +53,12 @@ public class PersonInfoViewModel extends ViewModel {
                         }
                     }, err -> {
                         LogUtils.e(LOG_TAG, err.getMessage(), err);
-                        if (err instanceof NoInternetException) {
-                            personInfoViewState.setShowProgress(false);
-                            personInfoViewState.setPersonShowListChanged(false);
-                            personInfoViewState.setShowNoInternetError(true);
-                            personInfoViewState.setErrorMessage(null);
-                            mPersonInfoViewState.postValue(personInfoViewState);
-                        } else {
-                            personInfoViewState.setShowProgress(false);
-                            personInfoViewState.setPersonShowListChanged(false);
-                            personInfoViewState.setShowNoInternetError(false);
-                            personInfoViewState.setErrorMessage(err.getMessage());
-                            mPersonInfoViewState.postValue(personInfoViewState);
-                        }
+                        personInfoViewState.setShowProgress(false);
+                        personInfoViewState.setPersonShowListChanged(false);
+                        personInfoViewState.setShowNoInternetError(err instanceof NoInternetException);
+                        personInfoViewState.setErrorMessage(err instanceof NoInternetException ?
+                                null : err.getMessage());
+                        mPersonInfoViewState.postValue(personInfoViewState);
                     });
         }
     }

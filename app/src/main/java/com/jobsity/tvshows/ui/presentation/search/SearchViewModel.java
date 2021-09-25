@@ -62,23 +62,16 @@ public class SearchViewModel extends ViewModel {
 
     private void manageError(Throwable err) {
         LogUtils.e(LOG_TAG, err.getMessage(), err);
+
         SearchViewState searchViewState = mSearchViewState.getValue();
-        if (err instanceof NoInternetException) {
-            searchViewState.setShowProgress(false);
-            searchViewState.setShowListChanged(false);
-            searchViewState.setNothingToShow(searchViewState.getShowList().isEmpty() &&
-                    searchViewState.getPersonList().isEmpty());
-            searchViewState.setShowNoInternetError(true);
-            searchViewState.setErrorMessage(null);
-            mSearchViewState.postValue(searchViewState);
-        } else {
-            searchViewState.setShowProgress(false);
-            searchViewState.setShowListChanged(false);
-            searchViewState.setNothingToShow(searchViewState.getShowList().isEmpty() &&
-                    searchViewState.getPersonList().isEmpty());                        searchViewState.setShowNoInternetError(false);
-            searchViewState.setErrorMessage(err.getMessage());
-            mSearchViewState.postValue(searchViewState);
-        }
+        searchViewState.setShowProgress(false);
+        searchViewState.setShowListChanged(false);
+        searchViewState.setNothingToShow(searchViewState.getShowList().isEmpty() &&
+                searchViewState.getPersonList().isEmpty());
+        searchViewState.setShowNoInternetError(err instanceof NoInternetException);
+        searchViewState.setErrorMessage(err instanceof NoInternetException ?
+                null : err.getMessage());
+        mSearchViewState.postValue(searchViewState);
     }
 
     private void loadPersonList(List<Person> personList) {

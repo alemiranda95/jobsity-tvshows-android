@@ -29,15 +29,13 @@ public class PinViewModel extends ViewModel {
     }
 
     public void validatePind() {
+        boolean isValid = mSecurityRepository.isPinValid(mPin.getValue());
+
         PinViewState pinViewState = mPinViewState.getValue();
-        if (mSecurityRepository.isPinValid(mPin.getValue())) {
-            pinViewState.setValidPin(true);
-            pinViewState.setUseFingerprint(false);
-            pinViewState.setErrorMessage(null);
-        } else {
-            pinViewState.setUseFingerprint(false);
-            pinViewState.setErrorMessage(TvShowApp.getRes().getString(R.string.invalid_pin));
-        }
+        pinViewState.setUseFingerprint(false);
+        pinViewState.setValidPin(isValid);
+        pinViewState.setErrorMessage(isValid ?
+                null : TvShowApp.getRes().getString(R.string.invalid_pin));
         mPinViewState.setValue(pinViewState);
     }
 

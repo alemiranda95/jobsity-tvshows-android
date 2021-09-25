@@ -54,21 +54,14 @@ public class HomeViewModel extends ViewModel {
                         LogUtils.e(LOG_TAG, err.getMessage(), err);
                         isSyncing = false;
                         showRepository.getShowsFailed();
-                        if (err instanceof NoInternetException) {
-                            homeViewState.setShowProgress(false);
-                            homeViewState.setShowListChanged(false);
-                            homeViewState.setNothingToShow(homeViewState.getShowList().isEmpty());
-                            homeViewState.setShowNoInternetError(true);
-                            homeViewState.setErrorMessage(null);
-                            mhomeViewState.postValue(homeViewState);
-                        } else {
-                            homeViewState.setShowProgress(false);
-                            homeViewState.setShowListChanged(false);
-                            homeViewState.setNothingToShow(homeViewState.getShowList().isEmpty());
-                            homeViewState.setShowNoInternetError(false);
-                            homeViewState.setErrorMessage(err.getMessage());
-                            mhomeViewState.postValue(homeViewState);
-                        }
+
+                        homeViewState.setShowProgress(false);
+                        homeViewState.setShowListChanged(false);
+                        homeViewState.setNothingToShow(homeViewState.getShowList().isEmpty());
+                        homeViewState.setShowNoInternetError(err instanceof NoInternetException);
+                        homeViewState.setErrorMessage(err instanceof NoInternetException ?
+                                null : err.getMessage());
+                        mhomeViewState.postValue(homeViewState);
                     });
         }
     }

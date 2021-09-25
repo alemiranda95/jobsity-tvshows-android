@@ -70,19 +70,13 @@ public class ShowInfoViewModel extends ViewModel {
                         }
                     }, err -> {
                         LogUtils.e(LOG_TAG, err.getMessage(), err);
-                        if (err instanceof NoInternetException) {
-                            showInfoViewState.setShowProgress(false);
-                            showInfoViewState.setEpisodeListChanged(false);
-                            showInfoViewState.setShowNoInternetError(true);
-                            showInfoViewState.setErrorMessage(null);
-                            mShowInfoViewState.postValue(showInfoViewState);
-                        } else {
-                            showInfoViewState.setShowProgress(false);
-                            showInfoViewState.setEpisodeListChanged(false);
-                            showInfoViewState.setShowNoInternetError(false);
-                            showInfoViewState.setErrorMessage(err.getMessage());
-                            mShowInfoViewState.postValue(showInfoViewState);
-                        }
+
+                        showInfoViewState.setShowProgress(false);
+                        showInfoViewState.setEpisodeListChanged(false);
+                        showInfoViewState.setShowNoInternetError(err instanceof NoInternetException);
+                        showInfoViewState.setErrorMessage(err instanceof NoInternetException ?
+                                null : err.getMessage());
+                        mShowInfoViewState.postValue(showInfoViewState);
                     });
         }
     }
